@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://fonts/Roboto/Roboto_Regular_36.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/Roboto/Roboto_Refular_20.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/quit_button.gdns" type="Script" id=3]
+[ext_resource path="res://textures/kenney/light/texture_03.png" type="Texture" id=4]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 4 )
+uv1_scale = Vector3( 6, 6, 6 )
+
+[sub_resource type="ProceduralSky" id=3]
+
+[sub_resource type="Environment" id=4]
+background_sky = SubResource( 3 )
+
+[node name="Menu" type="Spatial"]
+
+[node name="menu-ui" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.594604
+margin_right = 0.594604
+margin_bottom = 6.10352e-05
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="Label" parent="menu-ui"]
+anchor_left = 0.015
+anchor_top = 0.029
+anchor_right = 0.297
+anchor_bottom = 0.171
+margin_left = -0.200001
+margin_top = 0.119997
+margin_right = -0.160065
+margin_bottom = -0.12001
+custom_fonts/font = ExtResource( 1 )
+text = "Nim ui menu"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Label" parent="menu-ui"]
+anchor_left = 0.07
+anchor_top = 0.339
+anchor_right = 0.12
+anchor_bottom = 0.394
+margin_left = -0.599998
+margin_top = -0.0800323
+margin_right = 0.399994
+margin_bottom = 0.319946
+custom_fonts/font = ExtResource( 2 )
+text = "Play"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit" type="Label" parent="menu-ui"]
+anchor_left = 0.07
+anchor_top = 0.522
+anchor_right = 0.12
+anchor_bottom = 0.578
+margin_left = -0.599991
+margin_top = 0.159973
+margin_right = 0.399994
+margin_bottom = -0.160034
+mouse_filter = 0
+custom_fonts/font = ExtResource( 2 )
+text = "Quit"
+align = 1
+valign = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu_camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 4, 0 )
+
+[node name="plane" type="MeshInstance" parent="."]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 4 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 4.53779, 0 )
+spot_range = 11.0
+spot_attenuation = 1.36604
