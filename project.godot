@@ -9,13 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Label",
+"class": "HidePanel",
+"language": "NativeScript",
+"path": "res://scripts/hide_panel.gdns"
+}, {
 "base": "",
 "class": "QuitGame",
 "language": "NativeScript",
 "path": "res://scripts/quit_button.gdns"
+}, {
+"base": "Label",
+"class": "ShowPanel",
+"language": "NativeScript",
+"path": "res://scripts/show_panel.gdns"
 } ]
 _global_script_class_icons={
-"QuitGame": ""
+"HidePanel": "",
+"QuitGame": "",
+"ShowPanel": ""
 }
 
 [application]

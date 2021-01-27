@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://fonts/Roboto/Roboto_Regular_36.tres" type="DynamicFont" id=1]
 [ext_resource path="res://fonts/Roboto/Roboto_Refular_20.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scripts/quit_button.gdns" type="Script" id=3]
 [ext_resource path="res://textures/kenney/light/texture_03.png" type="Texture" id=4]
+[ext_resource path="res://scripts/show_panel.gdns" type="Script" id=5]
+[ext_resource path="res://scripts/hide_panel.gdns" type="Script" id=6]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -61,6 +63,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="settings" type="Label" parent="menu-ui"]
+anchor_left = 0.047
+anchor_top = 0.425
+anchor_right = 0.147
+anchor_bottom = 0.48
+margin_left = 0.399998
+margin_top = -3.05176e-05
+margin_right = 0.400002
+margin_bottom = -3.05176e-05
+mouse_filter = 0
+custom_fonts/font = ExtResource( 2 )
+text = "Settings"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="quit" type="Label" parent="menu-ui"]
 anchor_left = 0.07
 anchor_top = 0.522
@@ -79,6 +100,57 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="settingspanel" type="Panel" parent="menu-ui"]
+anchor_left = 0.349
+anchor_top = 0.228
+anchor_right = 0.885
+anchor_bottom = 0.687
+margin_left = -0.200012
+margin_top = 0.199982
+margin_right = -6.10352e-05
+margin_bottom = -0.200073
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="volume" type="Label" parent="menu-ui/settingspanel"]
+anchor_left = 0.096
+anchor_top = 0.124
+anchor_right = 0.459
+anchor_bottom = 0.255
+margin_left = -0.183994
+margin_top = -0.0999985
+margin_right = 0.0890198
+margin_bottom = -0.125
+custom_fonts/font = ExtResource( 2 )
+text = "Volume"
+align = 1
+valign = 1
+
+[node name="volume_slider" type="HSlider" parent="menu-ui/settingspanel"]
+anchor_left = 0.081
+anchor_top = 0.281
+anchor_right = 0.496
+anchor_bottom = 0.405
+margin_left = 0.148281
+margin_top = 0.0874786
+margin_right = 0.113297
+margin_bottom = -0.0125198
+value = 70.0
+
+[node name="Button" type="Button" parent="menu-ui/settingspanel"]
+anchor_left = 0.713
+anchor_top = 0.871
+anchor_right = 0.986
+anchor_bottom = 0.98
+margin_left = 0.0679016
+margin_top = -0.0294495
+margin_right = -0.0490723
+margin_bottom = -0.00442505
+custom_fonts/font = ExtResource( 2 )
+text = "Close"
+script = ExtResource( 6 )
 
 [node name="menu_camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 4, 0 )
