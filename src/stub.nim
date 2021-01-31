@@ -9,3 +9,4 @@ when not defined(release):
 import quit_game
 import show_panel
 import hide_panel
+import ambience

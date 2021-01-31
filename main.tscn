@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://fonts/Roboto/Roboto_Regular_36.tres" type="DynamicFont" id=1]
 [ext_resource path="res://fonts/Roboto/Roboto_Refular_20.tres" type="DynamicFont" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://textures/kenney/light/texture_03.png" type="Texture" id=4]
 [ext_resource path="res://scripts/show_panel.gdns" type="Script" id=5]
 [ext_resource path="res://scripts/hide_panel.gdns" type="Script" id=6]
+[ext_resource path="res://sfx/ambience/jgrzinich/windy-city-night-ambience.wav" type="AudioStream" id=7]
+[ext_resource path="res://scripts/ambience.gdns" type="Script" id=8]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -127,17 +129,56 @@ custom_fonts/font = ExtResource( 2 )
 text = "Volume"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ambience" type="Label" parent="menu-ui/settingspanel"]
+anchor_left = 0.096
+anchor_top = 0.564
+anchor_right = 0.459
+anchor_bottom = 0.695
+margin_left = -0.18399
+margin_top = -0.0999908
+margin_right = 0.0890045
+margin_bottom = -0.125
+custom_fonts/font = ExtResource( 2 )
+text = "Ambience"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="volume_slider" type="HSlider" parent="menu-ui/settingspanel"]
 anchor_left = 0.081
 anchor_top = 0.281
 anchor_right = 0.496
 anchor_bottom = 0.405
-margin_left = 0.148281
-margin_top = 0.0874786
-margin_right = 0.113297
-margin_bottom = -0.0125198
-value = 70.0
+margin_left = 0.648281
+margin_top = 0.087471
+margin_right = 0.613297
+margin_bottom = -0.0125275
+max_value = 50.0
+value = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ambience_slider" type="HSlider" parent="menu-ui/settingspanel"]
+anchor_left = 0.083
+anchor_top = 0.727
+anchor_right = 0.5
+anchor_bottom = 0.851
+margin_left = -0.209995
+margin_top = 0.0750275
+margin_right = -1.10298
+margin_bottom = -0.0249786
+max_value = 50.0
+value = 25.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="menu-ui/settingspanel"]
 anchor_left = 0.713
@@ -167,3 +208,9 @@ environment = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 4.53779, 0 )
 spot_range = 11.0
 spot_attenuation = 1.36604
+
+[node name="ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+bus = "Ambience"
+script = ExtResource( 8 )

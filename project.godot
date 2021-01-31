@@ -9,7 +9,12 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Label",
+"base": "AudioStreamPlayer",
+"class": "Ambience",
+"language": "NativeScript",
+"path": "res://scripts/ambience.gdns"
+}, {
+"base": "BaseButton",
 "class": "HidePanel",
 "language": "NativeScript",
 "path": "res://scripts/hide_panel.gdns"
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://scripts/show_panel.gdns"
 } ]
 _global_script_class_icons={
+"Ambience": "",
 "HidePanel": "",
 "QuitGame": "",
 "ShowPanel": ""
@@ -35,6 +41,10 @@ _global_script_class_icons={
 config/name="menu-ui-nim"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
+
+[audio]
+
+default_bus_layout="res://ambience.tres"
 
 [debug]
 
