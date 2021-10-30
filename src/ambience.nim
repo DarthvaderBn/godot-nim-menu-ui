@@ -1,4 +1,4 @@
-# Darthvader Naxxx, 2021
+# DarthvaderBn, 2021
 
 import godot
 import godotapi / [scene_tree, audio_stream_player , canvas_item, slider, range]
