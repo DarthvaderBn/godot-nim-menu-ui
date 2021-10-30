@@ -1,4 +1,4 @@
-# Darthvader Naxxx, 2021
+# DarthvaderBn, 2021
 
 import godot
 import godotapi / [scene_tree, base_button, global_constants , input_event_mouse_button, panel, canvas_item]
